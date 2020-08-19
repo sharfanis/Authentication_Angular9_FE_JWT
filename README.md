@@ -1,6 +1,8 @@
-# NewSigma
+# NewSigma - Authentication_Angular9_FE_JWT
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
+Template project showcasing authentication mechanism using JWT tokens, login/logout/Signup/Registration functionality using Angular 9 and .Net Core_3.1
 
 ## Development server
 
