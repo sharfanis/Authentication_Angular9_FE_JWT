@@ -4,7 +4,7 @@
         <div class="col-md-12 my-auto side-header">
           <img src="/assets/img/add_user.png" class="mx-auto d-block">
           <h1>User Registration</h1>
-          <p><em>-Using <strong>Asp.Net Core Web API</strong> and <strong>Angular 7</strong></em></p>
+          <p><em>-Using <strong>Asp.Net Core Web API</strong> and <strong>Angular 9</strong></em></p>
         </div>
       </div>
     </div>
@@ -13,6 +13,12 @@
         <div class="form-group required">
           <label>Username</label>
           <input class="form-control" formControlName="UserName">
+
+
+          <!-- {{service.formModel.get('UserName').touched}}    -->
+          
+          <!-- {{service.formModel.get('UserName').errors?.required}}  this one is not working -->  
+          
           <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This field is mandatory.</label>
         </div>
         <div class="form-group">
