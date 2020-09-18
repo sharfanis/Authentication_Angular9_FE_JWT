@@ -16,7 +16,7 @@
 
 
           <!-- {{service.formModel.get('UserName').touched}}    -->
-          
+  
           <!-- {{service.formModel.get('UserName').errors?.required}}  this one is not working -->  
           
           <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This field is mandatory.</label>
@@ -52,3 +52,4 @@
       </form>
     </div>
   </div>
+  
