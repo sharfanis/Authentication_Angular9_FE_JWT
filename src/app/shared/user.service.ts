@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class UserService {
   constructor(private fb: FormBuilder , private http: HttpClient) { }
     
    readonly baseURL = 'http://localhost:64816/api';
+
+   // Taken care by Http Interceptor. AMAZING !!!
+   //tokenHeader = new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')});
    
    formModel = this.fb.group({
  
@@ -57,6 +60,16 @@ export class UserService {
 
   return this.http.post(this.baseURL + '/ApplicationUser/Register' , obj);
 
+ }
+
+ login(formData) {
+  return this.http.post(this.baseURL + '/ApplicationUser/Login' , formData);
+ }
+
+
+ getUserProfileInfo() {
+
+    return this.http.get(this.baseURL+'/UserProfile/GetUserInfo');
  }
 
 }
