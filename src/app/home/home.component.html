@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a  class="navbar-brand text-white"> JWT Auth System</a>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+
+
+<div class="card m-5" style="width: 18rem" *ngIf= "userDetails">
+   <ul class="list-group">
+     <li class="list-group-item">
+         <strong> Username: {{userDetails.userName}}</strong>
+     </li>
+
+     <li class="list-group-item">
+        <strong> Email: {{userDetails.email}}</strong>
+    </li>
+
+    <li class="list-group-item">
+        <strong> FullName: {{userDetails.fullName}}</strong>
+    </li>
+   </ul>
+</div>
