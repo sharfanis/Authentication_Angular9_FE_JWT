@@ -1,5 +1,11 @@
 <nav class="navbar navbar-dark bg-dark">
     <a  class="navbar-brand text-white"> JWT Auth System</a>
+   
+    <ul class="navbar-nav mr-auto">
+       <li class="nav-item">
+        <a class="nav-link" routerLink="/adminPanel"> Admin Panel</a>
+       </li>     
+    </ul>
     <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
 
@@ -15,7 +21,7 @@
     </li>
 
     <li class="list-group-item">
-        <strong> FullName: {{userDetails.fullName}}</strong>
+        <strong> Full Name: {{userDetails.fullName}}</strong>
     </li>
    </ul>
 </div>
