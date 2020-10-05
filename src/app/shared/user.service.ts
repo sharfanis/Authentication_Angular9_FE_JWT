@@ -72,6 +72,21 @@ export class UserService {
     return this.http.get(this.baseURL+'/UserProfile/GetUserInfo');
  }
 
+
+ roleMatch(allowedRoles): boolean {
+     var isMatch = false;
+     var payload = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+     var userRole = payload.role;
+     allowedRoles.forEach(element => {
+        if(userRole == element) {
+          isMatch = true;
+          return false;
+        }    
+     });
+
+     return isMatch;
+ }
+
 }
 
 
