@@ -1,6 +1,9 @@
 <div class="wrapper">
    <div class="wrapped-div">
      <div class="tab-header">
+      <div *ngIf ="welcometext">
+         {{welcometext}}
+       </div>
      <h2 routerLink= '/user/login' routerLinkActive='active'>Sign In</h2>
      <h2 routerLink= '/user/registration' routerLinkActive='active'> Sign Up</h2>
      </div>

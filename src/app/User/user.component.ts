@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+
+  welcometext: any;
+  constructor(private service: UserService ) {}
 
   ngOnInit(): void {
+    this.service.getWelcomeText().subscribe(
+      res => {
+        this.welcometext = res;
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+  );
   }
 
 }

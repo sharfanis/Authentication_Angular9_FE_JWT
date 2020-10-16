@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/user.service';
 import { Router } from '@angular/router';
@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
      Password : ''
    }
 
-
-
   constructor(private service: UserService , private router: Router , private toaster: ToastrService) { }
 
   ngOnInit(): void {
@@ -25,6 +23,7 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
   }
+
 
   onSubmit(form: NgForm) {
 

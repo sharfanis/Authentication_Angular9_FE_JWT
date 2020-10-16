@@ -10,6 +10,7 @@ import { UserService } from '../shared/user.service';
 export class HomeComponent implements OnInit {
 
   userDetails;
+  welcometext: any;
   constructor(private router: Router , private service: UserService ) { }
 
   ngOnInit(): void {

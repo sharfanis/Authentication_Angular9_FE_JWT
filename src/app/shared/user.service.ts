@@ -11,7 +11,9 @@ export class UserService {
 
   constructor(private fb: FormBuilder , private http: HttpClient) { }
     
-   readonly baseURL = 'http://localhost:64816/api';
+   //readonly baseURL = 'http://localhost:64816/api';
+
+   readonly baseURL = 'http://myfamilyapi.azurewebsites.net/api';
 
    // Taken care by Http Interceptor. AMAZING !!!
    //tokenHeader = new HttpHeaders({'Authorization':'Bearer ' + localStorage.getItem('token')});
@@ -85,6 +87,10 @@ export class UserService {
      });
 
      return isMatch;
+ }
+
+ getWelcomeText() {
+  return this.http.get(this.baseURL+'/ApplicationUser/welcome');
  }
 
 }
